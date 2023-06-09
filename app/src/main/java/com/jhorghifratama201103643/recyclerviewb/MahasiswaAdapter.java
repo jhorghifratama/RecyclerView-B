@@ -14,7 +14,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaViewHolder>
 {
     private List<MahasiswaModel> _mahasiswamodelList;
 
-    public MahasiswaAdapte(List<MahasiswaModel> mahasiswaModelList)
+    public MahasiswaAdapter(List<MahasiswaModel> mahasiswaModelList)
     {
         this._mahasiswamodelList = mahasiswaModelList;
     }
@@ -22,7 +22,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaViewHolder>
     @Override
     public MahasiswaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        LayoutInflater inflater = LayoutInflater.from((parent.getContext());
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.list_mahasiswa, parent, false);
 
         return new MahasiswaViewHolder(v);

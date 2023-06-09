@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         ahc.get(url, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody)
+            {
                 Gson g = new Gson();
-                List<MahasiswaModel> mahasiswaModelList = g.fromJson(new String(responseBody), new TypeToken<List<MahasiswaModel>>() {}.getType());
+                List<MahasiswaModel> mahasiswaModelList = g.fromJson(new String(responseBody), new TypeToken<List<MahasiswaModel>>(){}.getType());
 
                 RecyclerView.LayoutManager lm = new LinearLayoutManager(MainActivity.this);
                 _recyclerView1.setLayoutManager(lm);
