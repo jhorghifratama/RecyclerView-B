@@ -106,10 +106,10 @@
             android:text="Status Pernikahan" />
 
         <Spinner
-            android:id="@+id/statusNikahSpinner"
+            android:id="@+id/statusPernikahanSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/statusMenikahArray" />
+            android:entries="@array/statusPernikahanArray" />
 
         <TextView
             android:layout_width="wrap_content"

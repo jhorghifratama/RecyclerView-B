@@ -23,7 +23,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
     private Button _saveButton;
     private EditText _alamatEditText, _namaEditText, _nimEditText, _tahunMasukEditText, _tanggalLahirEditText;
     private EditText _tempatLahirEditText;
-    private Spinner _jenisKelaminSpinner, _jpSpinner, _statusNikahSpinner;
+    private Spinner _jenisKelaminSpinner, _jpSpinner, _statusPernikahanSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
                 String jp = _jpSpinner.getSelectedItem().toString();
                 String nama = _namaEditText.getText().toString();
                 String nim = _nimEditText.getText().toString();
-                String statusNikah = _statusNikahSpinner.getSelectedItem().toString();
+                String statusPernikahan = _statusPernikahanSpinner.getSelectedItem().toString();
                 String tahunMasuk = _tahunMasukEditText.getText().toString();
                 String tanggalLahir = _tanggalLahirEditText.getText().toString();
                 String tempatLahir = _tempatLahirEditText.getText().toString();
@@ -51,25 +51,26 @@ public class AddMahasiswaActivity extends AppCompatActivity {
                 try {
                     alamat = URLEncoder.encode(alamat, "utf-8");
                     jeniskelamin = URLEncoder.encode(jeniskelamin, "utf-8");
+                    jp = URLEncoder.encode(jp,"utf-8");
                     nama = URLEncoder.encode(nama, "utf-8");
                     nim = URLEncoder.encode(nim, "utf-8");
-                    statusNikah = URLEncoder.encode(statusNikah, "utf-8");
+                    statusPernikahan = URLEncoder.encode(statusPernikahan, "utf-8");
                     tanggalLahir = URLEncoder.encode(tanggalLahir, "utf-8");
                     tempatLahir = URLEncoder.encode(tempatLahir, "utf-8");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
 
-                String url = "https://stmikpontianak.net/011100862/tambahlMahasiswa.php" +
+                String url = "https://stmikpontianak.net/011100862/tambahMahasiswa.php" +
                         "?nim=" + nim +
-                        "?nama=" + nama +
-                        "?jenisKelamin=" + jeniskelamin +
-                        "?tempatLahir=" + tempatLahir +
-                        "?tanggalLahir=" + tanggalLahir +
-                        "?alamat=" + alamat +
-                        "?jp=" + jp +
-                        "?statusPernikahan=" + statusNikah +
-                        "?tahunMasuk=" + tahunMasuk;
+                        "&nama=" + nama +
+                        "&jenisKelamin=" + jeniskelamin +
+                        "&tempatLahir=" + tempatLahir +
+                        "&tanggalLahir=" + tanggalLahir +
+                        "&alamat=" + alamat +
+                        "&jp=" + jp +
+                        "&statusPernikahan=" + statusPernikahan +
+                        "&tahunMasuk=" + tahunMasuk;
 
                 Log.d("tw", url);
 
@@ -101,7 +102,7 @@ public class AddMahasiswaActivity extends AppCompatActivity {
         _jpSpinner = findViewById(R.id.jpSpinner);
         _namaEditText = findViewById(R.id.namaEditText);
         _nimEditText = findViewById(R.id.nimEditText);
-        _statusNikahSpinner = findViewById(R.id.statusNikahSpinner);
+        _statusPernikahanSpinner = findViewById(R.id.statusPernikahanSpinner);
         _tahunMasukEditText = findViewById(R.id.tahunMasukEditText);
         _tanggalLahirEditText = findViewById(R.id.tanggalLahirEditText);
         _tempatLahirEditText = findViewById(R.id.tempatLahirEditText);
